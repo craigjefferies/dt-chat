@@ -4,7 +4,7 @@ version: 1.2.1
 cache: true
 
 interface:
-  customWelcome: 'Welcome to LibreChat! Enjoy your experience.'
+  customWelcome: 'Kiaora to LibreChat! Enjoy your experience.'
   fileSearch: true
   privacyPolicy:
     externalUrl: 'https://librechat.ai/privacy-policy'
