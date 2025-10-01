@@ -4,7 +4,7 @@ version: 1.2.1
 cache: true
 
 interface:
-  customWelcome: 'Kiaora to LibreChat! Enjoy your experience.'
+  customWelcome: 'Kiaora to DTTA CHat! Enjoy your experience.'
   fileSearch: true
   privacyPolicy:
     externalUrl: 'https://librechat.ai/privacy-policy'
@@ -24,7 +24,9 @@ interface:
   sidePanel: true
   presets: true
   prompts: true
-  bookmarks: true
+  bookmarks: false
+  memories: false     
+  fileSearch: false   
   multiConvo: true
   agents: true
   peoplePicker:
