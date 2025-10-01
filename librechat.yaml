@@ -5,7 +5,7 @@ cache: true
 
 interface:
   customWelcome: 'Kiaora to DTTA CHat! Enjoy your experience.'
-  fileSearch: true
+  fileSearch: false
   privacyPolicy:
     externalUrl: 'https://librechat.ai/privacy-policy'
     openNewTab: true
@@ -19,14 +19,12 @@ interface:
       *Effective Date: February 18, 2024*
       ...
   endpointsMenu: true
-  modelSelect: false
+  modelSelect: true
   parameters: true
   sidePanel: true
   presets: true
   prompts: true
-  bookmarks: false
-  memories: false     
-  fileSearch: false   
+  bookmarks: false       
   multiConvo: true
   agents: true
   peoplePicker:
