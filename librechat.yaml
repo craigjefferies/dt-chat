@@ -2,36 +2,16 @@
 # https://www.librechat.ai/docs/configuration/librechat_yaml
 
 version: 1.2.1
+cache: true
 
 # --- DEMO PRIVACY SETTINGS ---
 cache: false          # disables caching to prevent chat history persistence
 mongo:
   enabled: false       # disables MongoDB storage entirely
-  uri: ""              # no database connection (sessions live only in browser)
-  collection: ""
-  user: ""
-  password: ""
-
-# --- INTERFACE CONFIGURATION ---
+  
 interface:
-  customWelcome: 'Kia ora and welcome to DTTA Chat! Each session is private and temporary.'
+  customWelcome: 'Kia ora to DTTA Chat! Enjoy your experience.'
   fileSearch: false
-  fileCitations: true
-  bookmarks: false
-  multiConvo: false          # disables persistent multi-conversation mode for privacy
-  agents: true
-  presets: true
-  prompts: true
-  sidePanel: true
-  parameters: true
-  modelSelect: true
-  endpointsMenu: true
-  peoplePicker:
-    users: true
-    groups: true
-    roles: true
-  marketplace:
-    use: false
   privacyPolicy:
     externalUrl: 'https://librechat.ai/privacy-policy'
     openNewTab: true
@@ -39,26 +19,38 @@ interface:
     externalUrl: 'https://librechat.ai/tos'
     openNewTab: true
     modalAcceptance: true
-    modalTitle: 'Terms of Service for DTTA Chat'
+    modalTitle: 'Terms of Service for LibreChat'
     modalContent: |
-      # Terms and Conditions for DTTA Chat
+      # Terms and Conditions for LibreChat
       *Effective Date: February 18, 2024*
-      ---
-      This demo environment is temporary. 
-      No personal data or chat history is stored or shared.
-      Please avoid entering identifiable student or teacher information.
+      ...
+  endpointsMenu: true
+  modelSelect: true
+  parameters: true
+  sidePanel: true
+  presets: true
+  prompts: true
+  bookmarks: false
+  multiConvo: true
+  agents: true
+  peoplePicker:
+    users: true
+    groups: true
+    roles: true
+  marketplace:
+    use: false
+  fileCitations: true
 
-# --- REGISTRATION & ACCESS CONTROL ---
 registration:
-  socialLogins: []        # disables social logins for demo simplicity
+  socialLogins: ['github', 'google', 'discord', 'openid', 'facebook', 'apple', 'saml']
 
 actions:
   allowedDomains:
+    - 'swapi.dev'
     - 'librechat.ai'
-    - 'openrouter.ai'
     - 'google.com'
 
-# --- CUSTOM MODEL ENDPOINT (OpenRouter) ---
+# --- SINGLE endpoints block (keep only this one) ---
 endpoints:
   custom:
     - name: "OpenRouter"
@@ -68,9 +60,10 @@ endpoints:
         x-librechat-body-parentmessageid: "{{LIBRECHAT_BODY_PARENTMESSAGEID}}"
       models:
         default:
+          # - "openai/gpt-5-mini"  # alt path works; see note below
           - "google/gemini-2.5-flash-preview-09-2025"
         fetch: false
       titleConvo: true
       titleModel: "openai/gpt-5-nano"
       dropParams: ["stop"]
-      modelDisplayLabel: "OpenRouter (DTTA Demo)"
+      modelDisplayLabel: "OpenRouter (DT)"
