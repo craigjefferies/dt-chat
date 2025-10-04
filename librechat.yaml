@@ -3,6 +3,8 @@
 
 version: 1.2.1
 cache: false
+mongo:
+  enabled: false
 
 
   
