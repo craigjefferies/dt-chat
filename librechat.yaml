@@ -2,12 +2,9 @@
 # https://www.librechat.ai/docs/configuration/librechat_yaml
 
 version: 1.2.1
-cache: true
+cache: false
 
-# --- DEMO PRIVACY SETTINGS ---
-cache: false          # disables caching to prevent chat history persistence
-mongo:
-  enabled: false       # disables MongoDB storage entirely
+
   
 interface:
   customWelcome: 'Kia ora to DTTA Chat! Enjoy your experience.'
