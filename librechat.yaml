@@ -1,30 +1,26 @@
-# For more information, see the Configuration Guide:
+# LibreChat Configuration
 # https://www.librechat.ai/docs/configuration/librechat_yaml
-
 version: 1.2.1
 cache: true
 
-
-
-  
 interface:
   forceTemporaryChat: true
-  customWelcome: 'Kia ora to DTTA Chat! Enjoy your experience.'
+  customWelcome: "Kia ora to DTTA Chat! Enjoy your experience."
   fileSearch: false
   privacyPolicy:
-    externalUrl: 'https://librechat.ai/privacy-policy'
+    externalUrl: "https://librechat.ai/privacy-policy"
     openNewTab: true
   termsOfService:
-    externalUrl: 'https://librechat.ai/tos'
+    externalUrl: "https://librechat.ai/tos"
     openNewTab: true
     modalAcceptance: true
-    modalTitle: 'Terms of Service for LibreChat'
+    modalTitle: "Terms of Service for LibreChat"
     modalContent: |
       # Terms and Conditions for LibreChat
       *Effective Date: February 18, 2024*
       ...
   endpointsMenu: true
-  modelSelect: false
+  modelSelect: false        # hide model selector (only one model anyway)
   parameters: true
   sidePanel: false
   presets: true
@@ -41,28 +37,26 @@ interface:
   fileCitations: true
 
 registration:
-  socialLogins: ['github', 'google', 'discord', 'openid', 'facebook', 'apple', 'saml']
+  # keep only providers you've configured
+  socialLogins: ["github", "google", "discord"]
 
 actions:
   allowedDomains:
-    - 'swapi.dev'
-    - 'librechat.ai'
-    - 'google.com'
+    - "swapi.dev"
+    - "librechat.ai"
+    - "google.com"
 
-# --- SINGLE endpoints block (keep only this one) ---
 endpoints:
   custom:
     - name: "OpenRouter"
       apiKey: "${OPENROUTER_KEY}"
       baseURL: "https://openrouter.ai/api/v1"
-      headers:
-        x-librechat-body-parentmessageid: "{{LIBRECHAT_BODY_PARENTMESSAGEID}}"
+      # only one model — no fetching or listing
       models:
         default:
-          # - "openai/gpt-5-mini"  # alt path works; see note below
           - "google/gemini-2.5-flash-preview-09-2025"
-        fetch: true
+        fetch: false
       titleConvo: true
-      titleModel: "openai/gpt-5-nano"
+      titleModel: "google/gemini-2.5-flash-preview-09-2025"
       dropParams: ["stop"]
-      modelDisplayLabel: "OpenRouter (DT)"
+      modelDisplayLabel: "OpenRouter (Gemini 2.5 Flash)"
