@@ -22,7 +22,7 @@ interface:
   endpointsMenu: true
   modelSelect: true        # hide model selector (only one model anyway)
   parameters: true
-  sidePanel: false
+  sidePanel: true
   presets: true
   prompts: true
   bookmarks: false
