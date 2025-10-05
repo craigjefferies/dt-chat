@@ -1,5 +1,4 @@
 # LibreChat Configuration
-# https://www.librechat.ai/docs/configuration/librechat_yaml
 version: 1.2.1
 cache: true
 
@@ -20,9 +19,9 @@ interface:
       *Effective Date: February 18, 2024*
       ...
   endpointsMenu: true
-  modelSelect: true        # hide model selector (only one model anyway)
-  parameters: true
-  sidePanel: true
+  modelSelect: true          # keep visible to choose between your 2 models
+  parameters: true           # enables the right parameters drawer (⚙️ button)
+  sidePanel: true            # left sidebar (chats/presets/agents)
   presets: true
   prompts: true
   bookmarks: false
@@ -37,7 +36,6 @@ interface:
   fileCitations: true
 
 registration:
-  # keep only providers you've configured
   socialLogins: ["github", "google", "discord"]
 
 actions:
@@ -51,13 +49,13 @@ endpoints:
     - name: "OpenRouter"
       apiKey: "${OPENROUTER_KEY}"
       baseURL: "https://openrouter.ai/api/v1"
-      # only one model — no fetching or listing
       models:
+        # lock the catalog to only these two — do NOT fetch everything
+        fetch: false
         default:
           - "google/gemini-2.5-flash-preview-09-2025"
           - "google/gemini-2.5-pro"
-        fetch: true
       titleConvo: true
       titleModel: "google/gemini-2.5-flash-preview-09-2025"
       dropParams: ["stop"]
-      modelDisplayLabel: "OpenRouter (Gemini 2.5 Flash)"
+      modelDisplayLabel: "OpenRouter (Gemini Only)"
