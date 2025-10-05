@@ -24,9 +24,9 @@ interface:
       *Effective Date: February 18, 2024*
       ...
   endpointsMenu: true
-  modelSelect: true
+  modelSelect: false
   parameters: true
-  sidePanel: true
+  sidePanel: false
   presets: true
   prompts: true
   bookmarks: false
