@@ -20,9 +20,9 @@ interface:
       *Effective Date: February 18, 2024*
       ...
   endpointsMenu: true
-  modelSelect: false        # hide model selector (only one model anyway)
+  modelSelect: true        # hide model selector (only one model anyway)
   parameters: true
-  sidePanel: true
+  sidePanel: false
   presets: true
   prompts: true
   bookmarks: false
