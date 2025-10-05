@@ -8,6 +8,7 @@ cache: false
 
   
 interface:
+  forceTemporaryChat: true
   customWelcome: 'Kia ora to DTTA Chat! Enjoy your experience.'
   fileSearch: false
   privacyPolicy:
