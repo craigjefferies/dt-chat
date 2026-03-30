@@ -56,6 +56,6 @@ endpoints:
           - "google/gemini-3-flash-preview"
           - "google/gemini-2.5-pro"
       titleConvo: true
-      titleModel: "google/gemini-2.5-flash-preview-09-2025"
+      titleModel: "google/gemini-3-flash-preview"
       dropParams: ["stop"]
       modelDisplayLabel: "OpenRouter (Gemini Only)"
